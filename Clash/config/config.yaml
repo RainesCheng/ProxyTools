@@ -105,7 +105,7 @@ proxy-groups:
   - {name: 🎥 Netflix, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
-  - {name: 📺 EMBY, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
+  - {name: 📺 EMBY, type: select, include-all-proxies: true, filter: (?i)Emby|0.01x, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
   - {name: 📢 谷歌FCM, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
@@ -242,6 +242,11 @@ rule-providers:
     path: ./ruleset/ProxyMedia.yaml
     behavior: classical
 
+  ProxyGFWlist:
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
+    path: ./ruleset/ProxyGFWlist.yaml
+    behavior: classical
+
   ChinaDomain:
     <<: *RuleProviders
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaDomain.yaml
@@ -293,6 +298,7 @@ rules:
   - "RULE-SET, Game, 🎮 游戏平台"
   - "RULE-SET, ChinaMedia, 🌏 国内媒体"
   - "RULE-SET, ProxyMedia, 🌍 国外媒体"
+  - "RULE-SET, ProxyGFWlist, 🚀 节点选择"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "RULE-SET, ChinaCompanyIp, 🎯 全球直连"
   - "RULE-SET, Download, 🎯 全球直连"
