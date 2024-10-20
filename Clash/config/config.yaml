@@ -109,6 +109,7 @@ proxy-groups:
   - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
   - {name: 📢 谷歌FCM, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🐱 Github, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🍎 苹果服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
@@ -211,6 +212,12 @@ rule-providers:
     path: ./ruleset/Telegram.yaml
     behavior: classical
 
+  Github:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
+    path: ./ruleset/Github.yaml
+    behavior: classical
+
   AI:
     <<: *RuleProviders
     url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/AI.yaml
@@ -282,6 +289,7 @@ rules:
   - "RULE-SET, BilibiliHMT, 📺 哔哩哔哩"
   - "RULE-SET, Emby, 📺 EMBY"
   - "RULE-SET, AI, 💬 AI"
+  - "RULE-SET, Github, 🐱 Github"
   - "RULE-SET, Game, 🎮 游戏平台"
   - "RULE-SET, ChinaMedia, 🌏 国内媒体"
   - "RULE-SET, ProxyMedia, 🌍 国外媒体"
