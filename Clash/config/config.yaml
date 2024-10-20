@@ -243,6 +243,7 @@ rule-providers:
     behavior: classical
 
   ProxyGFWlist:
+    <<: *RuleProviders
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
     path: ./ruleset/ProxyGFWlist.yaml
     behavior: classical
