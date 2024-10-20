@@ -1,0 +1,294 @@
+# mihomo 配置
+
+port: 7890
+socks-port: 7891
+mixed-port: 7892
+redir-port: 7893
+tproxy-port: 7894
+
+unified-delay: true
+geodata-mode: false
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 24
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: true
+udp: true
+
+external-controller: 0.0.0.0:9090
+# external-ui: ui
+# external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
+
+geox-url:
+  # geoip: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat'
+  # geosite: 'https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geosite.dat'
+  mmdb: 'https://gitlab.com/Masaiki/GeoIP2-CN/-/raw/release/Country.mmdb'
+  asn: 'https://gitlab.com/Loon0x00/loon_data/-/raw/main/geo/GeoLite2-ASN.mmdb'
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - +.v2ex.com
+
+  skip-domain:
+    - Mijia Cloud
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+  auto-route: true
+  auto-detect-interface: true
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter:
+    - "*"
+    - +.lan
+  default-nameserver:
+    - 223.5.5.5
+    - 223.6.6.6
+  nameserver:
+    - https://223.5.5.5/dns-query#h3=true
+    - https://223.6.6.6/dns-query#h3=true
+
+#  节点订阅的参数 [每小时更新一次订阅节点，每 6 秒一次健康检查]
+NodeParam: &NodeParam {type: http, interval: 3600, health-check: {enable: true, url: 'http://detectportal.firefox.com/success.txt', interval: 6}}
+
+# 锚点 - 节点筛选组
+FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
+FilterTW: &FilterTW '^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
+FilterJP: &FilterJP '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
+FilterSG: &FilterSG '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
+FilterUS: &FilterUS '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|🎮|Emby|(\b(GAME)\b))).*$'
+FilterAuto: &FilterAuto '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|Emby|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
+FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
+
+# 策略组参数
+# 锚点 - 时延优选参数 [每 6 秒一次惰性健康检查，容差 20ms，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
+UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 20, lazy: true, url: 'http://detectportal.firefox.com/success.txt', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: false, include-all-proxies: true}
+# 规则参数 [每小时更新一次订阅规则，更新规则时使用直连策略]
+RuleProviders: &RuleProviders {type: http, interval: 86400, format: yaml, proxy: ♻️ 自动选择}
+
+# 策略组
+proxy-groups: 
+  - {name: 🚀 节点选择, type: select, include-all-proxies: true, filter: *FilterAll}
+  - {name: ♻️ 自动选择, type: url-test, include-all-proxies: true, filter: *FilterAuto}
+  - {name: 📲 Telegram, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 📹 YouTube, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🎥 Netflix, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
+  - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
+  - {name: 📺 EMBY, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
+  - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
+  - {name: 📢 谷歌FCM, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: Ⓜ️ 微软服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🍎 苹果服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🎮 游戏平台, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🎯 全球直连, type: select, proxies: [DIRECT, 🚀 节点选择]}
+  - {name: 🛑 广告拦截, type: select, proxies: [REJECT, DIRECT]}
+  - {name: 🍃 应用净化, type: select, proxies: [REJECT, DIRECT]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+
+# 地区策略组
+  - {name: 🇭🇰 香港, <<: *UrlTest, filter: *FilterHK}
+  - {name: 🇹🇼 台湾, <<: *UrlTest, filter: *FilterTW}
+  - {name: 🇸🇬 新加坡, <<: *UrlTest, filter: *FilterSG}
+  - {name: 🇯🇵 日本, <<: *UrlTest, filter: *FilterJP}
+  - {name: 🇺🇸 美国, <<: *UrlTest, filter: *FilterUS}
+
+# 订阅规则
+rule-providers:
+  LocalAreaNetwork:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml
+    path: ./ruleset/LocalAreaNetwork.yaml
+    behavior: classical
+
+  UnBan:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/UnBan.yaml
+    path: ./ruleset/UnBan.yaml
+    behavior: classical
+
+  BanAD:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/BanAD.yaml
+    path: ./ruleset/BanAD.yaml
+    behavior: classical
+
+  BanProgramAD:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/BanProgramAD.yaml
+    path: ./ruleset/BanProgramAD.yaml
+    behavior: classical
+
+  GoogleFCM:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    path: ./ruleset/GoogleFCM.yaml
+    behavior: classical
+
+  YouTube:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/YouTube.yaml
+    path: ./ruleset/YouTube.yaml
+    behavior: classical
+
+  Netflix:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Netflix.yaml
+    path: ./ruleset/Netflix.yaml
+    behavior: classical
+
+  Bahamut:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Bahamut.yaml
+    path: ./ruleset/Bahamut.yaml
+    behavior: classical
+
+  Bilibili:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Bilibili.yaml
+    path: ./ruleset/Bilibili.yaml
+    behavior: classical
+
+  BilibiliHMT:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    path: ./ruleset/BilibiliHMT.yaml
+    behavior: classical
+
+  Emby:
+    <<: *RuleProviders
+    url: https://github.com/RainesCheng/Proxy_Tools/raw/refs/heads/main/Clash/rules/Emby.yaml
+    path: ./ruleset/Emby.yaml
+    behavior: classical
+
+  Microsoft:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Microsoft.yaml
+    path: ./ruleset/Microsoft.yaml
+    behavior: classical
+
+  Apple:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Apple.yaml
+    path: ./ruleset/Apple.yaml
+    behavior: classical
+
+  Telegram:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Telegram.yaml
+    path: ./ruleset/Telegram.yaml
+    behavior: classical
+
+  AI:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/AI.yaml
+    path: ./ruleset/AI.yaml
+    behavior: classical
+
+  Game:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/Game.yaml
+    path: ./ruleset/Game.yaml
+    behavior: classical
+
+  ChinaMedia:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaMedia.yaml
+    path: ./ruleset/ChinaMedia.yaml
+    behavior: classical
+
+  ProxyMedia:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ProxyMedia.yaml
+    path: ./ruleset/ProxyMedia.yaml
+    behavior: classical
+
+  ChinaDomain:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaDomain.yaml
+    path: ./ruleset/ChinaDomain.yaml
+    behavior: domain
+
+  ChinaCompanyIp:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaCompanyIp.yaml
+    path: ./ruleset/ChinaCompanyIp.yaml
+    behavior: ipcidr
+
+  Download:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Download.yaml
+    path: ./ruleset/Download.yaml
+    behavior: classical
+
+  ChinaDownloadCDN:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/ChinaDownloadCDN.yaml
+    path: ./rules/ChinaDownloadCDN.yaml
+    behavior: classical
+
+  InternationalDownloadCDN:
+    <<: *RuleProviders
+    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/InternationalDownloadCDN.yaml
+    path: ./rules/InternationalDownloadCDN.yaml
+    behavior: classical
+
+# 规则指向
+rules:
+  - "RULE-SET, LocalAreaNetwork, 🎯 全球直连"
+  - "RULE-SET, UnBan, 🎯 全球直连"
+  - "RULE-SET, BanAD, 🛑 广告拦截"
+  - "RULE-SET, BanProgramAD, 🍃 应用净化"
+  - "RULE-SET, GoogleFCM, 📢 谷歌FCM"
+  - "RULE-SET, Microsoft, Ⓜ️ 微软服务"
+  - "RULE-SET, Apple, 🍎 苹果服务"
+  - "RULE-SET, Telegram, 📲 Telegram"
+  - "RULE-SET, YouTube, 📹 YouTube"
+  - "RULE-SET, Netflix, 🎥 Netflix"
+  - "RULE-SET, Bahamut, 📺 巴哈姆特"
+  - "RULE-SET, Bilibili, 📺 哔哩哔哩"
+  - "RULE-SET, BilibiliHMT, 📺 哔哩哔哩"
+  - "RULE-SET, Emby, 📺 EMBY"
+  - "RULE-SET, AI, 💬 AI"
+  - "RULE-SET, Game, 🎮 游戏平台"
+  - "RULE-SET, ChinaMedia, 🌏 国内媒体"
+  - "RULE-SET, ProxyMedia, 🌍 国外媒体"
+  - "RULE-SET, ChinaDomain, 🎯 全球直连"
+  - "RULE-SET, ChinaCompanyIp, 🎯 全球直连"
+  - "RULE-SET, Download, 🎯 全球直连"
+  - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
+  - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
+  - "GEOIP, CN, 🎯 全球直连"
+  - "MATCH, 🐟 漏网之鱼"
