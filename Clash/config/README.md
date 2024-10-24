@@ -4,4 +4,4 @@
 
 核心文档：[https://wiki.metacubex.one](https://wiki.metacubex.one)
 
-配置地址：[https://github.com/RainesCheng/Proxy_Tools/raw/refs/heads/main/Clash/config/config.yaml](https://github.com/RainesCheng/Proxy_Tools/raw/refs/heads/main/Clash/config/config.yaml)
+配置地址：[https://raw.githubusercontent.com/RainesCheng/ProxyTools/refs/heads/main/Clash/config/config.yaml](https://raw.githubusercontent.com/RainesCheng/ProxyTools/refs/heads/main/Clash/config/config.yaml)
