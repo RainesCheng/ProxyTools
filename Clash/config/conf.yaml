@@ -222,13 +222,13 @@ rule-providers:
 
   AI:
     <<: *RuleProviders
-    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/AI.yaml
+    url: https://kelee.one/Tool/Clash/Rule/AI.yaml
     path: ./ruleset/AI.yaml
     behavior: classical
 
   Game:
     <<: *RuleProviders
-    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/Game.yaml
+    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
     path: ./ruleset/Game.yaml
     behavior: classical
 
@@ -270,14 +270,14 @@ rule-providers:
 
   ChinaDownloadCDN:
     <<: *RuleProviders
-    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/ChinaDownloadCDN.yaml
-    path: ./rules/ChinaDownloadCDN.yaml
+    url: https://kelee.one/Tool/Clash/Rule/ChinaDownloadCDN.yaml
+    path: ./ruleset/ChinaDownloadCDN.yaml
     behavior: classical
 
   InternationalDownloadCDN:
     <<: *RuleProviders
-    url: https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Rule/InternationalDownloadCDN.yaml
-    path: ./rules/InternationalDownloadCDN.yaml
+    url: https://kelee.one/Tool/Clash/Rule/InternationalDownloadCDN.yaml
+    path: ./ruleset/InternationalDownloadCDN.yaml
     behavior: classical
 
 # 规则指向
