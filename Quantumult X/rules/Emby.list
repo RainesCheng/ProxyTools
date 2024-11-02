@@ -1,10 +1,10 @@
 # Emby 服务器
 
-DOMAIN-SUFFIX,emby.prpr.cn.com
-DOMAIN-SUFFIX,789.123456.al
-DOMAIN-SUFFIX,emby.aca.best
-DOMAIN-SUFFIX,porn.aca.best
-DOMAIN-SUFFIX,stream1.misakaf.org
-DOMAIN-SUFFIX,stream2.misakaf.org
-DOMAIN-SUFFIX,stream3.misakaf.org
-DOMAIN-SUFFIX,stream4.misakaf.org
+HOST-SUFFIX,emby.prpr.cn.com
+HOST-SUFFIX,789.123456.al
+HOST-SUFFIX,emby.aca.best
+HOST-SUFFIX,porn.aca.best
+HOST-SUFFIX,stream1.misakaf.org
+HOST-SUFFIX,stream2.misakaf.org
+HOST-SUFFIX,stream3.misakaf.org
+HOST-SUFFIX,stream4.misakaf.org
