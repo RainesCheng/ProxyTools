@@ -107,7 +107,7 @@ proxy-groups:
   - {name: 🎥 Netflix, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
-  - {name: 📺 Emby, type: select, include-all-proxies: true, filter: (?i)Emby|0.01x, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
+  - {name: 📺 Emby, type: select, include-all-proxies: true, filter: (?i)Emby|0.01x, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, DIRECT]}
   - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
   - {name: 📢 谷歌FCM, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
