@@ -3,7 +3,6 @@ payload:
   - DOMAIN,emby.prpr.cn.com # prprEmby
   - DOMAIN,https://789.123456.al # TreeDiagram
   - DOMAIN,emby.aca.best # ACA Emby
-  - DOMAIN,porn.aca.best #  ACA Pron Emby
   - DOMAIN,stream1.misakaf.org # MisakaF
   - DOMAIN,stream2.misakaf.org # MisakaF
   - DOMAIN,stream3.misakaf.org # MisakaF
