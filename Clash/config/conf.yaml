@@ -256,12 +256,6 @@ rule-providers:
     path: ./rules/ChinaDomain.yaml
     behavior: domain
 
-  ChinaCompanyIp:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaCompanyIp.yaml
-    path: ./rules/ChinaCompanyIp.yaml
-    behavior: ipcidr
-
   Download:
     <<: *RuleProviders
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Download.yaml
@@ -303,7 +297,6 @@ rules:
   - "RULE-SET, ProxyMedia, 🌍 国外媒体"
   - "RULE-SET, ProxyGFWlist, 🚀 节点选择"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
-  - "RULE-SET, ChinaCompanyIp, 🎯 全球直连"
   - "RULE-SET, Download, 🎯 全球直连"
   - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
   - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
