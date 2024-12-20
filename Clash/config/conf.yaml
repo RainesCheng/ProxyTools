@@ -284,6 +284,9 @@ rule-providers:
 # 规则指向
 rules:
   - "RULE-SET, LocalAreaNetwork, 🎯 全球直连"
+  - "RULE-SET, Download, 🎯 全球直连"
+  - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
+  - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
   - "RULE-SET, UnBan, 🎯 全球直连"
   - "RULE-SET, BanAD, 🛑 广告拦截"
   - "RULE-SET, BanProgramAD, 🍃 应用净化"
@@ -297,7 +300,7 @@ rules:
   - "RULE-SET, Bilibili, 📺 哔哩哔哩"
   - "RULE-SET, BilibiliHMT, 📺 哔哩哔哩"
   - "RULE-SET, Emby, 📺 Emby"
-  - "RULE-SET, Spotify 🎶 Spotify"
+  - "RULE-SET, Spotify, 🎶 Spotify"
   - "RULE-SET, AI, 💬 AI"
   - "RULE-SET, Github, 🐱 Github"
   - "RULE-SET, Game, 🎮 游戏平台"
@@ -305,8 +308,5 @@ rules:
   - "RULE-SET, ProxyMedia, 🌍 国外媒体"
   - "RULE-SET, ProxyGFWlist, 🚀 节点选择"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
-  - "RULE-SET, Download, 🎯 全球直连"
-  - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
-  - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
