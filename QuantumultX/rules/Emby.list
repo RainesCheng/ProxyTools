@@ -1,12 +1,6 @@
 # Emby 服务器
 
 HOST-SUFFIX,neo.iflya321.com,emby
-HOST-SUFFIX,789.123456.al,emby
-HOST-SUFFIX,emby.aca.best,emby
-HOST-SUFFIX,stream1.misakaf.org,emby
-HOST-SUFFIX,stream2.misakaf.org,emby
-HOST-SUFFIX,stream3.misakaf.org,emby
-HOST-SUFFIX,stream4.misakaf.org,emby
 HOST-SUFFIX,pub1.emby.wtf,emby
 HOST-SUFFIX,pub2.emby.wtf,emby
 HOST-SUFFIX,pub3.emby.wtf,emby
