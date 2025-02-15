@@ -1,12 +1,6 @@
 # Emby 服务器
 payload:
-  - DOMAIN,neo.iflya321.com # prprEmby
-  - DOMAIN,789.123456.al # TreeDiagram
-  - DOMAIN,emby.aca.best # ACA Emby
-  - DOMAIN,stream1.misakaf.org # MisakaF
-  - DOMAIN,stream2.misakaf.org # MisakaF
-  - DOMAIN,stream3.misakaf.org # MisakaF
-  - DOMAIN,stream4.misakaf.org # MisakaF
+  - DOMAIN,neo.iflya321.com # prprCloudEmby
   - DOMAIN,pub1.emby.wtf # 终点站
   - DOMAIN,pub2.emby.wtf # 终点站
   - DOMAIN,pub3.emby.wtf # 终点站
