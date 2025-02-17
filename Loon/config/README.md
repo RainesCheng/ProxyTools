@@ -8,7 +8,7 @@
 
 导入将覆盖原有配置，在导入前请务必备份好原有配置
 
-[点击导入](https://raw.githubusercontent.com/RainesCheng/ProxyTools/refs/heads/main/Loon/config/Lazy.conf)
+[点击导入](https://raw.githubusercontent.com/RainesCheng/ProxyTools/refs/heads/main/Loon/config/config.conf)
 
 ### 使用说明
 
