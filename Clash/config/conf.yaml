@@ -126,7 +126,7 @@ proxy-groups:
   - {name: 🎶 Spotify, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, DIRECT]}
   - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
-  - {name: 📢 谷歌FCM, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🐱 Github, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
