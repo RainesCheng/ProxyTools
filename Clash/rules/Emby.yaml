@@ -4,3 +4,4 @@ payload:
   - DOMAIN,pub1.emby.wtf # 终点站
   - DOMAIN,pub2.emby.wtf # 终点站
   - DOMAIN,pub3.emby.wtf # 终点站
+  - DOMAIN,emby.bangumi.ca # nyamedia
