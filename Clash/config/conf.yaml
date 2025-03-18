@@ -108,8 +108,8 @@ FilterAuto: &FilterAuto '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客
 FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
 
 # 策略组参数
-# 时延优选参数 [每 6 秒一次惰性健康检查，容差 20ms，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
-UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 20, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all-proxies: true}
+# 时延优选参数 [每 6 秒一次惰性健康检查，容差 50ms，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
+UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 50, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all-proxies: true}
 # 锚点 - 故障转移参数 [每 6 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
 FallBack: &FallBack {type: fallback, interval: 6, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: true, include-all-providers: true}
 # 规则参数 [每小时更新一次订阅规则，更新规则时使用直连策略]
