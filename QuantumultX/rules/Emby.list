@@ -1,11 +1,11 @@
 # Emby 服务器
 
 HOST-SUFFIX,neo.iflya321.com,emby # prprCloudEmby
-HOST-SUFFIX,pub1.emby.wtf,emby
-HOST-SUFFIX,pub2.emby.wtf,emby
-HOST-SUFFIX,pub3.emby.wtf,emby
-HOST-SUFFIX,emby.bangumi.ca,emby
-HOST-SUFFIX,ap-cn01.emby.bangumi.ca,emby
-HOST-SUFFIX,line.xmsl.org,emby
-HOST-SUFFIX,loacl.emby.moe,emby
-HOST-SUFFIX,tw.loseremby.org,emby
+HOST-SUFFIX,pub1.emby.wtf,emby # 终点站
+HOST-SUFFIX,pub2.emby.wtf,emby # 终点站
+HOST-SUFFIX,pub3.emby.wtf,emby # 终点站
+HOST-SUFFIX,emby.bangumi.ca,emby # Nya Media
+HOST-SUFFIX,ap-cn01.emby.bangumi.ca,emby # Nya Media
+HOST-SUFFIX,line.xmsl.org,emby # 1111
+HOST-SUFFIX,loacl.emby.moe,emby # 1111 直连服务器
+HOST-SUFFIX,tw.loseremby.org,emby # 1111 台湾HiNet
