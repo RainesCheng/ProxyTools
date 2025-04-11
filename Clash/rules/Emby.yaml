@@ -7,4 +7,5 @@ payload:
   - DOMAIN,emby.bangumi.ca # nyamedia
   - DOMAIN,ap-cn01.emby.bangumi.ca # nyamedia
   - DOMAIN,line.xmsl.org # 1111
+  - DOMAIN,tw.loseremby.org # 1111 台湾HiNet
   - DOMAIN,loacl.emby.moe # 1111直连
