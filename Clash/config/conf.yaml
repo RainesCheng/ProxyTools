@@ -270,7 +270,7 @@ rule-providers:
 
   ProxyGFWlist:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
     path: ./rules/ProxyGFWlist.yaml
     behavior: classical
 
