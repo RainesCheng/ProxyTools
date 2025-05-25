@@ -123,15 +123,14 @@ proxy-groups:
   - {name: 🎥 Netflix, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
-  - {name: 📺 Emby, type: select, include-all-proxies: true, filter: (?i)Emby|0.01x, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, DIRECT]}
+  - {name: 📺 Emby, type: select, include-all-proxies: true, filter: proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, DIRECT]}
   - {name: 🎶 Spotify, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, DIRECT]}
   - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🌏 国内媒体, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国]}
-  - {name: 📢 谷歌FCM, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🐱 Github, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: Ⓜ️ 微软服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🍎 苹果服务, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🐱 Github, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🇬 Google, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: Ⓜ️ Microsoft, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🍎 Apple, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🎮 游戏平台, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT, 🚀 节点选择]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT, DIRECT]}
@@ -154,6 +153,18 @@ rule-providers:
     path: ./rules/LocalAreaNetwork.yaml
     behavior: classical
 
+  ChinaDownloadCDN:
+    <<: *RuleProviders
+    url: https://kelee.one/Tool/Clash/Rule/ChinaDownloadCDN.yaml
+    path: ./rules/ChinaDownloadCDN.yaml
+    behavior: classical
+
+  InternationalDownloadCDN:
+    <<: *RuleProviders
+    url: https://kelee.one/Tool/Clash/Rule/InternationalDownloadCDN.yaml
+    path: ./rules/InternationalDownloadCDN.yaml
+    behavior: classical
+
   UnBan:
     <<: *RuleProviders
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/UnBan.yaml
@@ -172,10 +183,16 @@ rule-providers:
     path: ./rules/BanProgramAD.yaml
     behavior: classical
 
-  GoogleFCM:
+  ProxyGFWlist:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/GoogleFCM.yaml
-    path: ./rules/GoogleFCM.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
+    path: ./rules/ProxyGFWlist.yaml
+    behavior: classical
+
+  Telegram:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Telegram.yaml
+    path: ./rules/Telegram.yaml
     behavior: classical
 
   YouTube:
@@ -220,46 +237,10 @@ rule-providers:
     path: ./rules/Spotify.yaml
     behavior: classical
 
-  Microsoft:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Microsoft.yaml
-    path: ./rules/Microsoft.yaml
-    behavior: classical
-
-  Apple:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Apple.yaml
-    path: ./rules/Apple.yaml
-    behavior: classical
-
-  Telegram:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Telegram.yaml
-    path: ./rules/Telegram.yaml
-    behavior: classical
-
-  Github:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
-    path: ./rules/Github.yaml
-    behavior: classical
-
   AI:
     <<: *RuleProviders
     url: https://kelee.one/Tool/Clash/Rule/AI.yaml
     path: ./rules/AI.yaml
-    behavior: classical
-
-  Game:
-    <<: *RuleProviders
-    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
-    path: ./rules/Game.yaml
-    behavior: classical
-
-  ChinaMedia:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaMedia.yaml
-    path: ./rules/ChinaMedia.yaml
     behavior: classical
 
   ProxyMedia:
@@ -268,10 +249,34 @@ rule-providers:
     path: ./rules/ProxyMedia.yaml
     behavior: classical
 
-  ProxyGFWlist:
+  Google:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
-    path: ./rules/ProxyGFWlist.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Google.yaml
+    path: ./rules/Google.yaml
+    behavior: classical
+
+  Apple:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Apple.yaml
+    path: ./rules/Apple.yaml
+    behavior: classical
+
+  Microsoft:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Microsoft.yaml
+    path: ./rules/Microsoft.yaml
+    behavior: classical
+
+  Github:
+    <<: *RuleProviders
+    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
+    path: ./rules/Github.yaml
+    behavior: classical
+
+  Game:
+    <<: *RuleProviders
+    url: https://kelee.one/Tool/Clash/Rule/Game.yaml
+    path: ./rules/Game.yaml
     behavior: classical
 
   ChinaDomain:
@@ -279,18 +284,6 @@ rule-providers:
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ChinaDomain.yaml
     path: ./rules/ChinaDomain.yaml
     behavior: domain
-
-  ChinaDownloadCDN:
-    <<: *RuleProviders
-    url: https://kelee.one/Tool/Clash/Rule/ChinaDownloadCDN.yaml
-    path: ./rules/ChinaDownloadCDN.yaml
-    behavior: classical
-
-  InternationalDownloadCDN:
-    <<: *RuleProviders
-    url: https://kelee.one/Tool/Clash/Rule/InternationalDownloadCDN.yaml
-    path: ./rules/InternationalDownloadCDN.yaml
-    behavior: classical
 
 # 规则指向
 rules:
@@ -300,9 +293,7 @@ rules:
   - "RULE-SET, UnBan, 🎯 全球直连"
   - "RULE-SET, BanAD, 🛑 广告拦截"
   - "RULE-SET, BanProgramAD, 🍃 应用净化"
-  - "RULE-SET, GoogleFCM, 📢 谷歌FCM"
-  - "RULE-SET, Microsoft, Ⓜ️ 微软服务"
-  - "RULE-SET, Apple, 🍎 苹果服务"
+  - "RULE-SET, ProxyGFWlist, 🚥 故障转移"
   - "RULE-SET, Telegram, 📲 Telegram"
   - "RULE-SET, YouTube, 📹 YouTube"
   - "RULE-SET, Netflix, 🎥 Netflix"
@@ -312,11 +303,12 @@ rules:
   - "RULE-SET, Emby, 📺 Emby"
   - "RULE-SET, Spotify, 🎶 Spotify"
   - "RULE-SET, AI, 💬 AI"
+  - "RULE-SET, ProxyMedia, 🌍 国外媒体"
+  - "RULE-SET, Google, 🇬 Google"
+  - "RULE-SET, Apple, 🍎 Apple"
+  - "RULE-SET, Microsoft, Ⓜ️ Microsoft"
   - "RULE-SET, Github, 🐱 Github"
   - "RULE-SET, Game, 🎮 游戏平台"
-  - "RULE-SET, ChinaMedia, 🌏 国内媒体"
-  - "RULE-SET, ProxyMedia, 🌍 国外媒体"
-  - "RULE-SET, ProxyGFWlist, 🚀 节点选择"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
