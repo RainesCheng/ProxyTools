@@ -149,7 +149,7 @@ proxy-groups:
 rule-providers:
   LocalAreaNetwork:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/LocalAreaNetwork.yaml
     path: ./rules/LocalAreaNetwork.yaml
     behavior: classical
 
@@ -185,7 +185,7 @@ rule-providers:
 
   ProxyGFWlist:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/ProxyGFWlist.yaml
     path: ./rules/ProxyGFWlist.yaml
     behavior: classical
 
@@ -233,7 +233,7 @@ rule-providers:
 
   Spotify:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/Ruleset/Spotify.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Spotify.yaml
     path: ./rules/Spotify.yaml
     behavior: classical
 
@@ -269,7 +269,7 @@ rule-providers:
 
   Github:
     <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/blob/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
+    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
     path: ./rules/Github.yaml
     behavior: classical
 
