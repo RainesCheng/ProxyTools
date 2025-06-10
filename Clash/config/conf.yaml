@@ -1,5 +1,5 @@
 # mihomo 配置
-# 基于可莉🅥的配置修改的个人自用配置，策略组与规则集来自ACL4SSR
+# 基于可莉🅥的配置修改的个人自用配置，策略组与规则集参考ACL4SSR
 # 可莉🅥的配置：https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Config/Clash_Sample_Configuration_By_iKeLee.yaml
 
 port: 7890
