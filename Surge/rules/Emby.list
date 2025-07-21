@@ -1,10 +1,10 @@
 # Emby 线路
 
-HOST-SUFFIX,neo.iflya321.com
-HOST-SUFFIX,pub1.emby.wtf
-HOST-SUFFIX,pub2.emby.wtf
-HOST-SUFFIX,pub3.emby.wtf
-HOST-SUFFIX,emby.bangumi.ca
-HOST-SUFFIX,ap-cn01.emby.bangumi.ca
-HOST-SUFFIX,line.xmsl.org
-HOST-SUFFIX,tw.loseremby.org
+DOMAIN-SUFFIX,neo.iflya321.com
+DOMAIN-SUFFIX,pub1.emby.wtf
+DOMAIN-SUFFIX,pub2.emby.wtf
+DOMAIN-SUFFIX,pub3.emby.wtf
+DOMAIN-SUFFIX,emby.bangumi.ca
+DOMAIN-SUFFIX,ap-cn01.emby.bangumi.ca
+DOMAIN-SUFFIX,line.xmsl.org
+DOMAIN-SUFFIX,tw.loseremby.org
