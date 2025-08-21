@@ -225,12 +225,6 @@ rule-providers:
     path: ./rules/BilibiliHMT.yaml
     behavior: classical
 
-  Emby:
-    <<: *RuleProviders
-    url: https://github.com/RainesCheng/Proxy_Tools/raw/refs/heads/main/Clash/rules/Emby.yaml
-    path: ./rules/Emby.yaml
-    behavior: classical
-
   Spotify:
     <<: *RuleProviders
     url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Spotify.yaml
@@ -299,7 +293,6 @@ rules:
   - "RULE-SET, Bahamut, 📺 巴哈姆特"
   - "RULE-SET, Bilibili, 📺 哔哩哔哩"
   - "RULE-SET, BilibiliHMT, 📺 哔哩哔哩"
-  - "RULE-SET, Emby, 📺 Emby"
   - "RULE-SET, Spotify, 🎶 Spotify"
   - "RULE-SET, AI, 💬 AI"
   - "RULE-SET, ProxyMedia, 🌍 国外媒体"
