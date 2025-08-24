@@ -30,6 +30,7 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 🇭🇰 香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 🇹🇼 台湾 = NameRegex, FilterKey = "^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 🇯🇵 日本 = NameRegex, FilterKey = "^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
+🇰🇷 韩国 = NameRegex, FilterKey = "^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 🇸🇬 新加坡 = NameRegex, FilterKey = "^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 🇺🇸 美国 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|Emby|0.01x|🎮|(\b(GAME)\b))).*$"
 🌍 冷门 = NameRegex, FilterKey = "^(?=.*(.*))(?!.*((?i)🇭🇰|🇹🇼|🇯🇵|🇰🇷|🇸🇬|🇺🇸|香港|台湾|日本|川日|东京|大阪|泉日|埼玉|韩国|韓|首尔|新加坡|狮|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|到期|过期|已用|联系|邮箱|工单|群|贩卖|通知|倒卖|防止|国内|懒人|🎮|(\b(HK|Hong|TW|Tai|Taiwan|JP|Japan|KR|Korea|SG|Singapore|US|United States|GAME|USE|USED|TOTAL|EXPIRE|EMAIL|Panel)\d{0,2}\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
@@ -39,31 +40,32 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 香港 = url-test, 🇭🇰 香港, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
 台湾 = url-test, 🇹🇼 台湾, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
 日本 = url-test, 🇯🇵 日本, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+韩国 = url-test, 🇰🇷 韩国, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
 新加坡 = url-test, 🇸🇬 新加坡, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 美国 = url-test, 🇺🇸 美国, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 冷门 = select, 🌍 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
 
 # 流媒体
-YouTube = select, 香港, 台湾, 日本, 新加坡, 美国, img-url = 
-Spotify = select, 香港, 台湾, 日本, img-url = 
-BiliBili = select, DIRECT, 香港, 台湾, img-url = 
-Bahamut = select, 香港, 台湾, img-url = 
-Emby = select, 香港, 台湾, 新加坡, img-url = 
+YouTube = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+Spotify = select, 香港, 台湾, 日本, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_4.png
+Bahamut = select, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
+Emby = select, 香港, 台湾, 韩国, 新加坡, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
 # 社交平台
-Telegram = select, 香港, 台湾, 日本, 新加坡, 美国, img-url = 
-GlobalMedia = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, img-url = 
+Telegram = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+GlobalMedia = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
 
 # 软件&服务
 Paypal = select, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
 Apple = select, 香港, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
-Google = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, img-url = 
-Microsoft = select, 香港, 台湾, 日本, 新加坡, 美国, DIRECT, img-url = 
-Speedtest = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
-AI = select, 日本, 新加坡, 美国, DIRECT, img-url = 
+Google = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+Microsoft = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+Speedtest = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+AI = select, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
 
 # 兜底策略
-兜底切换 = fallback, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇸🇬 新加坡, 🇺🇸 美国, url = http://cp.cloudflare.com,interval = 60,max-timeout = 3000,img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
+兜底切换 = fallback, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, interval = 60, max-timeout = 2000, img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
 
 [Rule]
 # Local Rule
@@ -105,10 +107,10 @@ https://rule.kelee.one/Loon/Microsoft.lsr, policy=Microsoft, tag=Microsoft, enab
 https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=AI, tag=AI, enabled=true
 # Speedtest 规则
 https://rule.kelee.one/Loon/Speedtest.lsr, policy=Speedtest, tag=Speedtest, enabled=true
-# 🍟 Fries: 🌐 ASN China
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, policy=DIRECT, tag=🍟 Fries: 🌐 ASN China, enabled=true
 # 局域网地址
 https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy=DIRECT, tag=LAN, enabled=true
+# 🍟 Fries: 🌐 ASN China
+https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, policy=DIRECT, tag=🍟 Fries: 🌐 ASN China, enabled=true
 
 [Host]
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
