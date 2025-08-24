@@ -1,6 +1,4 @@
 # mihomo 配置
-# 基于可莉🅥的配置修改的个人自用配置，策略组与规则集参考ACL4SSR
-# 可莉🅥的配置：https://raw.githubusercontent.com/luestr/ProxyResource/main/Tool/Clash/Config/Clash_Sample_Configuration_By_iKeLee.yaml
 
 port: 7890
 socks-port: 7891
@@ -102,6 +100,7 @@ proxy-providers:
 FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterTW: &FilterTW '^(?=.*((?i)🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterJP: &FilterJP '^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|Japan)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
+FilterKR: &FilterKR '^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterSG: &FilterSG '^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|Singapore)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
 FilterUS: &FilterUS '^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|United States)\b)))(?!.*((?i)回国|校园|游戏|🎮|Emby|(\b(GAME)\b))).*$'
 FilterAll: &FilterAll '^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)\b|(\d{4}-\d{2}-\d{2}|\d+G)))).*$'
@@ -117,32 +116,31 @@ RuleProviders: &RuleProviders {type: http, interval: 86400, format: yaml, proxy:
 # 策略组
 proxy-groups: 
   - {name: 🚀 节点选择, type: select, include-all-proxies: true, filter: *FilterAll}
-  - {name: ♻️ 自动选择, <<: *UrlTest, include-all-proxies: true, filter: *FilterAll}
-  - {name: 📲 Telegram, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🎥 Netflix, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 🎥 Netflix, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
-  - {name: 📺 Emby, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, DIRECT]}
+  - {name: 📺 Emby, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 🎶 Spotify, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, DIRECT]}
-  - {name: 🌍 国外媒体, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🐱 Github, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🇬 Google, type: select, proxies: [♻️ 自动选择, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: Ⓜ️ Microsoft, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🍎 Apple, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
-  - {name: 🎮 游戏平台, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🌍 国外媒体, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 🇬 Google, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: Ⓜ️ Microsoft, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 🍎 Apple, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
+  - {name: 🎮 游戏平台, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT, 🚀 节点选择]}
   - {name: 🛑 广告拦截, type: select, proxies: [REJECT, DIRECT]}
   - {name: 🍃 应用净化, type: select, proxies: [REJECT, DIRECT]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚥 故障转移, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇸🇬 新加坡, 🇯🇵 日本, 🇺🇸 美国, DIRECT]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚥 故障转移, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 🚥 故障转移, <<: *FallBack, include-all-proxies: true, filter: *FilterAll}
 
 # 地区策略组
   - {name: 🇭🇰 香港, <<: *UrlTest, filter: *FilterHK}
   - {name: 🇹🇼 台湾, <<: *UrlTest, filter: *FilterTW}
-  - {name: 🇸🇬 新加坡, <<: *UrlTest, filter: *FilterSG}
   - {name: 🇯🇵 日本, <<: *UrlTest, filter: *FilterJP}
+  - {name: 🇰🇷 韩国, <<: *UrlTest, filter: *FilterKR}
+  - {name: 🇸🇬 新加坡, <<: *UrlTest, filter: *FilterSG}
   - {name: 🇺🇸 美国, <<: *UrlTest, filter: *FilterUS}
 
 # 订阅规则
@@ -261,12 +259,6 @@ rule-providers:
     path: ./rules/Microsoft.yaml
     behavior: classical
 
-  Github:
-    <<: *RuleProviders
-    url: https://github.com/ACL4SSR/ACL4SSR/raw/refs/heads/master/Clash/Providers/Ruleset/Github.yaml
-    path: ./rules/Github.yaml
-    behavior: classical
-
   Game:
     <<: *RuleProviders
     url: https://kelee.one/Tool/Clash/Rule/Game.yaml
@@ -305,3 +297,4 @@ rules:
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
+
