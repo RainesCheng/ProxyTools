@@ -59,7 +59,7 @@ GlobalMedia = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门,
 # 软件&服务
 Paypal = select, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
 Apple = select, 香港, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
-Google = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+Google = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
 Microsoft = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
 Speedtest = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
 AI = select, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
