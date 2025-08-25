@@ -50,7 +50,7 @@ YouTube = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = h
 Spotify = select, 香港, 台湾, 日本, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
 BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_4.png
 Bahamut = select, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
-Emby = select, 香港, 台湾, 韩国, 新加坡, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+Emby = select, 香港, 台湾, 韩国, 新加坡, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
 # 社交平台
 Telegram = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
