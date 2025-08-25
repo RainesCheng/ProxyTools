@@ -48,7 +48,7 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 # 流媒体
 YouTube = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 Spotify = select, 香港, 台湾, 日本, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_4.png
+BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
 Bahamut = select, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
 Emby = select, 香港, 台湾, 韩国, 新加坡, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
