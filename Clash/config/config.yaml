@@ -291,10 +291,10 @@ rules:
   - "RULE-SET, Google, 🇬 Google"
   - "RULE-SET, Apple, 🍎 Apple"
   - "RULE-SET, Microsoft, Ⓜ️ Microsoft"
-  - "RULE-SET, Github, 🐱 Github"
   - "RULE-SET, Game, 🎮 游戏平台"
   - "RULE-SET, ProxyGFWlist, 🚥 故障转移"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
+
 
