@@ -111,7 +111,7 @@ UrlTest: &UrlTest {type: url-test, interval: 6, tolerance: 50, lazy: true, url: 
 # 锚点 - 故障转移参数 [每 6 秒一次惰性健康检查，时延超过 2 秒判定为失败，失败 3 次则自动触发健康检查]
 FallBack: &FallBack {type: fallback, interval: 6, lazy: true, url: 'http://www.google.com/blank.html', disable-udp: false, timeout: 2000, max-failed-times: 3, hidden: false, include-all-providers: true}
 # 规则参数 [每小时更新一次订阅规则，更新规则时使用直连策略]
-RuleProviders: &RuleProviders {type: http, interval: 86400, format: yaml, proxy: DIRECT}
+RuleProviders: &RuleProviders {type: http, interval: 86400, format: yaml, proxy: 🐟 漏网之鱼}
 
 # 策略组
 proxy-groups: 
@@ -119,10 +119,10 @@ proxy-groups:
   - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 📹 YouTube, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 🎥 Netflix, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
-  - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 哔哩哔哩, type: select, proxies: [DIRECT, 🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾]}
+  - {name: 📺 巴哈姆特, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, DIRECT]}
   - {name: 📺 Emby, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
-  - {name: 🎶 Spotify, type: select, proxies: [🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, DIRECT]}
+  - {name: 🎶 Spotify, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, DIRECT]}
   - {name: 🌍 国外媒体, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 💬 AI, type: select, proxies: [🚀 节点选择, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
   - {name: 🇬 Google, type: select, proxies: [🚀 节点选择, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, DIRECT]}
@@ -296,5 +296,6 @@ rules:
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
+
 
 
