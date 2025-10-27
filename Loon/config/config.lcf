@@ -121,7 +121,7 @@ iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 
 [Plugin]
 https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.plugin, enabled=true
-https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Location.plugin, enabled=true
+https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.plugin, enabled=true
 https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.plugin, enabled=true
 https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.plugin, enabled=true
 https://github.com/NSRingo/TV/releases/latest/download/iRingo.TV.plugin, enabled=true
