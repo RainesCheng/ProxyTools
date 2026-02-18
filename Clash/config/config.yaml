@@ -1,4 +1,5 @@
 # mihomo 配置
+#基于可莉🅥的配置修改的个人自用配置，策略组与规则集参考ACL4SSR
 
 port: 7890
 socks-port: 7891
@@ -284,3 +285,4 @@ rules:
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
+
