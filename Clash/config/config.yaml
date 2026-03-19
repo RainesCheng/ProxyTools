@@ -99,14 +99,11 @@ proxy-providers:
     url: '机场1的订阅URL'
     <<: *NodeParam
     path: './proxy_providers/机场名称1.yaml'
-    override:
-     # additional-prefix: "[机场名称1] " # 为订阅节点添加机场名称前缀
+
   机场名称2:
     url: '机场2的订阅URL'
     <<: *NodeParam
     path: './proxy_providers/机场名称2.yaml'
-    override:
-     # additional-prefix: "[机场名称2] " # 为订阅节点添加机场名称前缀
 
 # 节点筛选
 FilterHK: &FilterHK '^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$'
@@ -265,6 +262,9 @@ rule-providers:
 
 # 规则指向
 rules:
+  - "DOMAIN,steamcdn-a.akamaihd.net, 🎯 全球直连"
+  - "DOMAIN-SUFFIX,cm.steampowered.com, 🎯 全球直连"
+  - "DOMAIN-SUFFIX,steamserver.net, 🎯 全球直连"
   - "RULE-SET, LocalAreaNetwork, 🎯 全球直连"
   - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
   - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
@@ -285,4 +285,3 @@ rules:
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
-
