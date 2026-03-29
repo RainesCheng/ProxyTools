@@ -25,9 +25,6 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Proxy]
 
 [Remote Proxy]
-prprCloud = https://sub.store/download/prprCloud,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
-Bocchi = https://sub.store/download/bocchi,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/cc63/ICON/main/icons/Bocchi.png
-prprCloud = https://ticket.12306.rip/loon/216/2VditcxKvH/shadowsocks,parser-enabled = true,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
 
 [Remote Filter]
 🇭🇰 香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
