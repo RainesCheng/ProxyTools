@@ -3,7 +3,7 @@ ip-mode = v4-only
 ipv6-vif = off
 dns-server = system
 sni-sniffing = true
-disable-stun = false
+disable-stun = true
 dns-reject-mode = LoopbackIP
 domain-reject-mode = DNS
 udp-fallback-mode = REJECT
@@ -19,12 +19,15 @@ proxy-test-url = http://www.gstatic.com/generate_204
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
 geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
 ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
-skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
-bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 
 [Proxy]
 
 [Remote Proxy]
+prprCloud = https://sub.store/download/prprCloud,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
+Bocchi = https://sub.store/download/bocchi,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/cc63/ICON/main/icons/Bocchi.png
+prprCloud = https://ticket.12306.rip/loon/216/2VditcxKvH/shadowsocks,parser-enabled = true,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
 
 [Remote Filter]
 🇭🇰 香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
@@ -37,37 +40,38 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 
 [Proxy Group]
 # 地区策略组
-香港 = url-test, 🇭🇰 香港, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
-台湾 = url-test, 🇹🇼 台湾, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
-日本 = url-test, 🇯🇵 日本, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
-韩国 = url-test, 🇰🇷 韩国, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
-新加坡 = url-test, 🇸🇬 新加坡, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
-美国 = url-test, 🇺🇸 美国, interval = 60,tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
-冷门 = select, 🌍 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
+香港 = url-test,🇭🇰 香港,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+台湾 = url-test,🇹🇼 台湾,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+日本 = url-test,🇯🇵 日本,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+韩国 = url-test,🇰🇷 韩国,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+新加坡 = url-test,🇸🇬 新加坡,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+美国 = url-test,🇺🇸 美国,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+冷门 = select,🌍 冷门,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
 
 # 流媒体
-YouTube = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-Spotify = select, 香港, 台湾, 日本, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
-Bahamut = select, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
-Emby = select, 香港, 台湾, 韩国, 新加坡, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+YouTube = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+Spotify = select,香港,台湾,日本,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+BiliBili = select,DIRECT,香港,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
+Bahamut = select,香港,台湾,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
+Emby = select,香港,台湾,韩国,新加坡,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
 
 # 社交平台
-Telegram = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
-GlobalMedia = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
+Telegram = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+GlobalMedia = select,香港,台湾,日本,韩国,新加坡,美国,冷门,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
 
 # 软件&服务
-Paypal = select, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
-Apple = select, 香港, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
-Google = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-Microsoft = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-Speedtest = select, 香港, 台湾, 日本, 韩国, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
-AI = select, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+Paypal = select,台湾,美国,冷门,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
+Apple = select,香港,美国,冷门,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
+Google = select,香港,台湾,日本,韩国,新加坡,美国,冷门,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+Microsoft = select,香港,台湾,日本,韩国,新加坡,美国,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+Speedtest = select,香港,台湾,日本,韩国,新加坡,美国,冷门,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+AI = select,日本,韩国,新加坡,美国,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
 
 # 兜底策略
-兜底切换 = fallback, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, interval = 60, max-timeout = 2000, img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
+兜底切换 = fallback,🇭🇰 香港,🇹🇼 台湾,🇯🇵 日本,🇰🇷 韩国,🇸🇬 新加坡,🇺🇸 美国,interval = 600,max-timeout = 3000,img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
 
 [Rule]
+DOMAIN-SUFFIX,giffgaff.com,冷门
 # Local Rule
 # Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR,IP-CIDR6,IP-ASN
 # Strategy:DIRECT,Proxy,REJECT
@@ -78,7 +82,12 @@ AI = select, 日本, 韩国, 新加坡, 美国, DIRECT, img-url = https://raw.gi
 # IP-CIDR,127.0.0.0/8,DIRECT
 # 配置文件已自带远程GEOIP,cn,DIRECT规则，请勿在此添加
 # 请勿修改远程CN REGION规则的排序甚至删除
-DOMAIN-SUFFIX,wise.com,英国
+DOMAIN-SUFFIX,wise.com,冷门
+DOMAIN-KEYWORD,emby,Emby
+DOMAIN,neo.iflya321.com,Emby
+DOMAIN,line.xmsl.org,Emby
+DOMAIN,kessoku-bando.biliblili.uk,Emby
+DOMAIN,streaming.biliblili.uk,Emby
 FINAL,兜底切换
 
 [Remote Rule]
@@ -91,10 +100,6 @@ https://rule.kelee.one/Loon/BiliBili.lsr, policy=BiliBili, tag=BiliBili, enabled
 https://rule.kelee.one/Loon/BiliBiliIntl.lsr, policy=BiliBili, tag=BiliBili, enabled=true
 # Telegram
 https://rule.kelee.one/Loon/Telegram.lsr, policy=Telegram, tag=Telegram, enabled=true
-# 国内媒体
-https://rule.kelee.one/Loon/ChinaMedia.lsr, policy=DIRECT, tag=ChinaMedia, enabled=true
-# 国外媒体
-https://rule.kelee.one/Loon/GlobalMedia.lsr, policy=GlobalMedia, tag=GlobalMedia, enabled=true
 # Paypal
 https://rule.kelee.one/Loon/PayPal.lsr, policy=Paypal, tag=PayPal, enabled=true
 # Apple
@@ -103,14 +108,15 @@ https://rule.kelee.one/Loon/Apple.lsr, policy=Apple, tag=Apple, enabled=true
 https://rule.kelee.one/Loon/Google.lsr, policy=Google, tag=Google, enabled=true
 # Microsoft
 https://rule.kelee.one/Loon/Microsoft.lsr, policy=Microsoft, tag=Microsoft, enabled=true
-# AI 规则
+# AI
 https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=AI, tag=AI, enabled=true
-# Speedtest 规则
+# Speedtest
 https://rule.kelee.one/Loon/Speedtest.lsr, policy=Speedtest, tag=Speedtest, enabled=true
+# 国外媒体
+https://rule.kelee.one/Loon/GlobalMedia.lsr, policy=GlobalMedia, tag=GlobalMedia, enabled=true
 # 局域网地址
-https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER, policy=DIRECT, tag=LAN, enabled=true
-# 🍟 Fries: 🌐 ASN China
-https://raw.githubusercontent.com/VirgilClyne/GetSomeFries/main/ruleset/ASN.China.list, policy=DIRECT, tag=🍟 Fries: 🌐 ASN China, enabled=true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=LAN, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGION, enabled=true
 
 [Host]
 iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
@@ -122,24 +128,21 @@ iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 [Plugin]
 https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.plugin, enabled=true
 https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.plugin, enabled=true
-https://github.com/NSRingo/GeoServices/releases/latest/download/iRingo.Maps.plugin, enabled=true
+https://github.com/NSRingo/Maps/releases/latest/download/iRingo.Maps.plugin, enabled=true
 https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.plugin, enabled=true
 https://github.com/NSRingo/TV/releases/latest/download/iRingo.TV.plugin, enabled=true
 https://github.com/NSRingo/News/releases/latest/download/iRingo.News.plugin, policy=美国, enabled=true
-https://github.com/NSRingo/TestFlight/releases/latest/download/iRingo.TestFlight.plugin, enabled=false
 https://github.com/DualSubs/Universal/releases/latest/download/DualSubs.Universal.plugin, enabled=true
 https://github.com/DualSubs/YouTube/releases/latest/download/DualSubs.YouTube.plugin, enabled=true
+https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.plugin, enabled=true
 https://github.com/DualSubs/Spotify/releases/latest/download/DualSubs.Spotify.plugin, enabled=true
 https://github.com/DualSubs/Spotify/raw/main/modules/DualSubs.Spotify.Transcripts.plugin, enabled=true
-https://github.com/DualSubs/Netflix/releases/latest/download/DualSubs.Netflix.plugin, enabled=true
 https://github.com/DualSubs/AddOn/releases/latest/download/DualSubs.AddOn.MicrosoftTranslate.plugin, enabled=true
 https://github.com/DualSubs/AddOn/raw/main/modules/DualSubs.AddOn.Akamaized.plugin, enabled=true
 https://github.com/BiliUniverse/Enhanced/releases/latest/download/BiliBili.Enhanced.plugin, enabled=true
 https://github.com/BiliUniverse/Global/releases/latest/download/BiliBili.Global.plugin, enabled=true
 https://github.com/BiliUniverse/Redirect/releases/latest/download/BiliBili.Redirect.plugin, enabled=true
 https://github.com/BiliUniverse/ADBlock/releases/latest/download/BiliBili.ADBlock.plugin, enabled=true
-https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/General.plugin, tag=🍟 Fries: 🌐 General Enhanced, enabled=true
-https://github.com/VirgilClyne/GetSomeFries/raw/main/plugin/DNS.plugin, enabled=true
 https://raw.githubusercontent.com/app2smile/rules/master/plugin/spotify.plugin, tag=Spotify Premium解锁, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QQ_Redirect.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Weixin_external_links_unlock.lpx, enabled=true
@@ -171,6 +174,12 @@ https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Umetrip_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/AutoHome_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Damai_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, tag=快捷搜索, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=兜底切换, tag=DNS防泄露, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, tag=节点检测工具, enabled=true
