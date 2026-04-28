@@ -265,7 +265,7 @@ rules:
   - "DOMAIN, steamcdn-a.akamaihd.net, 🎯 全球直连"
   - "DOMAIN-SUFFIX, cm.steampowered.com, 🎯 全球直连"
   - "DOMAIN-SUFFIX, steamserver.net, 🎯 全球直连"
-  - "DOMAIN-KEYWORD，emby, 📺 Emby"
+  - "DOMAIN-KEYWORD, emby, 📺 Emby"
   - "RULE-SET, LocalAreaNetwork, 🎯 全球直连"
   - "RULE-SET, ChinaDownloadCDN, 🎯 全球直连"
   - "RULE-SET, InternationalDownloadCDN, 🎯 全球直连"
