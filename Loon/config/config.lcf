@@ -11,9 +11,8 @@ wifi-access-http-port = 7222
 wifi-access-socks5-port = 7221
 allow-wifi-access = false
 interface-mode = auto
-test-timeout = 2
+test-timeout = 5
 disconnect-on-policy-change = false
-switch-node-after-failure-times = 3
 internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
 proxy-test-url = http://www.gstatic.com/generate_204
 resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
@@ -25,6 +24,9 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Proxy]
 
 [Remote Proxy]
+prprCloud = https://sub.store/download/prprCloud,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
+Bocchi = https://sub.store/download/bocchi,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/cc63/ICON/main/icons/Bocchi.png
+prprCloud(ss) = https://ticket.12306.rip/loon/216/2VditcxKvH/shadowsocks,parser-enabled = true,udp=true,block-quic=true,fast-open=default,vmess-aead=true,skip-cert-verify=true,enabled=true,flexible-sni=false,img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Prpr.png
 
 [Remote Filter]
 🇭🇰 香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|Hong)\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
@@ -68,23 +70,19 @@ AI = select,日本,韩国,新加坡,美国,DIRECT,img-url = https://raw.githubus
 兜底切换 = fallback,🇭🇰 香港,🇹🇼 台湾,🇯🇵 日本,🇰🇷 韩国,🇸🇬 新加坡,🇺🇸 美国,interval = 600,max-timeout = 3000,img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
 
 [Rule]
-DOMAIN-SUFFIX,giffgaff.com,冷门
-# Local Rule
-# Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR,IP-CIDR6,IP-ASN
-# Strategy:DIRECT,Proxy,REJECT
-# Options:no-resolve(no-resolve(only for cidr))
-# IP-CIDR,192.168.0.0/16,DIRECT
-# IP-CIDR,10.0.0.0/8,DIRECT
-# IP-CIDR,172.16.0.0/12,DIRECT
-# IP-CIDR,127.0.0.0/8,DIRECT
-# 配置文件已自带远程GEOIP,cn,DIRECT规则，请勿在此添加
+# 当配置文件中没有任何有效策略组时，Loon将使用内置的PROXY策略组
+# 当配置文件中存在有效的策略组时，内置的PROXY策略组将不再允许被调用，仅可使用用户配置的策略组
+# 配置文件已自带远程GEOIP, cn, DIRECT规则，请勿在此添加
 # 请勿修改远程CN REGION规则的排序甚至删除
+DOMAIN-SUFFIX,download.nektony.com,DIRECT
+DOMAIN-KEYWORD,bybit,冷门
+DOMAIN-SUFFIX,giffgaff.com,冷门
 DOMAIN-SUFFIX,wise.com,冷门
 DOMAIN-KEYWORD,emby,Emby
-DOMAIN,neo.iflya321.com,Emby
-DOMAIN,line.xmsl.org,Emby
-DOMAIN,kessoku-bando.biliblili.uk,Emby
-DOMAIN,streaming.biliblili.uk,Emby
+IP-CIDR,28.0.0.1/8,DIRECT
+IP-CIDR,198.18.0.1/16,DIRECT
+IP-CIDR,198.18.0.0/15,DIRECT
+IP-CIDR6,fc00::/18,DIRECT
 FINAL,兜底切换
 
 [Remote Rule]
@@ -177,6 +175,7 @@ https://kelee.one/Tool/Loon/Lpx/TaobaoTravel_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Dewu_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/PuPuMall_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/SF-Express_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/PerfectWorldEsport_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, tag=快捷搜索, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=兜底切换, tag=DNS防泄露, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, tag=节点检测工具, enabled=true
