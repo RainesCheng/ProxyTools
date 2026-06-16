@@ -282,7 +282,7 @@ rules:
   - "RULE-SET, Apple, 🍎 Apple"
   - "RULE-SET, Game, 🎮 游戏平台"
   - "RULE-SET, GoogleFCM, 📢 谷歌FCM"
-  - "RULE-SET, ProxyGFWlist, 🚥 故障转移"
   - "RULE-SET, ChinaDomain, 🎯 全球直连"
   - "GEOIP, CN, 🎯 全球直连"
   - "MATCH, 🐟 漏网之鱼"
+  - "RULE-SET, ProxyGFWlist, 🚥 故障转移"
