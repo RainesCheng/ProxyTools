@@ -120,7 +120,7 @@ iosapps.itunes.apple.com = iosapps.itunes.apple.com.download.ks-cdn.com
 [Script]
 
 [Plugin]
-https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.plugin, enabled=true
+https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
 https://github.com/NSRingo/LocationService/releases/latest/download/iRingo.LocationService.plugin, enabled=true
 https://github.com/NSRingo/Maps/releases/latest/download/iRingo.Maps.plugin, enabled=true
 https://github.com/NSRingo/Siri/releases/latest/download/iRingo.Siri.plugin, enabled=true
@@ -178,9 +178,8 @@ https://kelee.one/Tool/Loon/Lpx/PerfectWorldEsport_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, tag=快捷搜索, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=兜底切换, tag=DNS防泄露, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, tag=节点检测工具, enabled=true
-https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=兜底切换, tag=BoxJs, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=兜底切换, tag=Sub-Store, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=兜底切换, tag=Script-Hub, enabled=true
+https://github.com/chavyleung/scripts/raw/master/box/rewrite/boxjs.rewrite.loon.plugin, policy=兜底切换, enabled=true
+https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Loon.plugin, policy=兜底切换, enabled=true
 
 [Mitm]
 hostname = 
