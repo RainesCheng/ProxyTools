@@ -45,24 +45,27 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 冷门 = select, 🌍 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/World_Map.png
 
 # 社交平台
-Telegram = select,香港,台湾,日本,新加坡,美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+Telegram = select, 香港, 台湾, 日本 ,新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 
 # 流媒体
-YouTube = select,香港,台湾,日本,新加坡,美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
-Spotify = select,香港,台湾,日本,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
-BiliBili = select,DIRECT,香港,台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
-Bahamut = select,香港,台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
-Emby = select,香港,台湾,日本,新加坡,美国,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
-GlobalMedia = select,香港,台湾,日本,新加坡,美国,冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
+YouTube = select, 香港, 台湾, 日本, 新加坡, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+Spotify = select, 香港, 台湾, 日本, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+BiliBili = select, DIRECT, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
+Bahamut = select, 香港, 台湾, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
+Emby = select, 香港, 台湾, 日本, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png
+GlobalMedia = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
 
 # 软件&服务
-Paypal = select,台湾,美国,英国,冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
-Apple = select,香港美国,冷门,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
-Google = select,香港,台湾,日本,新加坡,美国,冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
-Microsoft = select,香港,台湾,日本,新加坡,美国,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-Speedtest = select,香港,台湾,日本,新加坡,美国,冷门,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
-AI = select,香港,日本,新加坡,美国,冷门,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
-加密货币 = select,香港,日本,新加坡,美国,冷门,DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cryptocurrency_1.png
+Paypal = select, 台湾, 美国, 英国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PayPal.png
+Apple = select, 香港, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple_1.png
+Google = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+Microsoft = select, 香港, 台湾, 日本, 新加坡, 美国, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+Speedtest = select, 香港, 台湾, 日本, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Speedtest.png
+AI = select, 香港, 日本, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+加密货币 = select, 香港, 日本, 新加坡, 美国, 冷门, DIRECT, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Cryptocurrency_1.png
+
+# 兜底策略
+兜底切换 = fallback, 🇭🇰 香港, 🇹🇼 台湾, 🇯🇵 日本, 🇰🇷 韩国, 🇸🇬 新加坡, 🇺🇸 美国, interval = 600, max-timeout = 3000, img-url = https://github.com/shindgewongxj/WHATSINStash/raw/main/icon/fallback.png
 
 [Rule]
 # 当配置文件中没有任何有效策略组时，Loon将使用内置的PROXY策略组
